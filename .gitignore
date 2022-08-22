@@ -1,0 +1,8 @@
+**/__pycache__
+/.idea/*
+/wandb/*
+/data/*
+/models/*
+/checkpoints/*
+/logs/*
+/images/*

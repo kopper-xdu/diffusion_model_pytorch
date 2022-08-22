@@ -1,0 +1,17 @@
+optimizer:  RMSprop
+learning_rate: 0.0002
+epochs: 10000
+batch_size: 128
+num_workers: 10
+data_path: ./data
+checkpoint_path: checkpoints
+model_save_path: models
+checkpoint_save_epochs: 10
+image_save_path: images
+print_steps: 100
+wandb: True
+resume: False
+image_size: 32
+time_steps: 1000
+device: cuda
+#id:
