@@ -10,8 +10,8 @@
 
 1000步生成效果
 
-![image](example\epoch1720.png)
+![image](example/epoch1720.png)
 
 100步（DDIM）效果
 
-![image](example\DDIM100.png)
+![image](example/DDIM100.png)
