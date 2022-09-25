@@ -4,7 +4,18 @@
 
 ### Usage
 
-后续更新
+```bash
+mkdir images 
+```
+
+```bash
+python eval.py --steps 1000
+```
+
+使用DDIM
+```bash
+python eval.py --steps 200 --DDIM
+```
 
 ### Result
 
@@ -15,3 +26,8 @@
 100步（DDIM）效果
 
 ![image](example/DDIM100.png)
+
+
+### 使用probability ODE采样
+
+在此[kopper-xdu/diffusion-sample (github.com)](https://github.com/kopper-xdu/diffusion-sample#diffusion-sample)实现

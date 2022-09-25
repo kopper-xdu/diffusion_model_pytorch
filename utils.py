@@ -33,12 +33,13 @@ posterior_variance = betas * (1. - alphas_cumprod_prev) / (1. - alphas_cumprod)
 log_posterior_variance = torch.log(posterior_variance.clamp(min=1e-20))  # 数值稳定
 
 
-def p_sample(model, x, t, DDIM, n, var_type, next_t):
+def p_sample(model, x, t, DDIM, var_type, next_t):
     device = x.device
     with torch.no_grad():
         z_pred = model(x, t)
         noise = torch.randn(x.shape, device=device) if t != 0 else torch.zeros(x.shape, device=device)
         if DDIM:
+            n = 0
             var_t = n * n * posterior_variance[t]
             x_zero_pred = (x - one_minus_alphas_cumprod_sqrt[t].to(device) * z_pred) / alphas_cumprod_sqrt[t].to(device)
             if next_t is None:
@@ -56,7 +57,7 @@ def p_sample(model, x, t, DDIM, n, var_type, next_t):
             return mean + torch.exp(0.5 * logvar) * noise
 
 
-def p_sample_loop(model, x, s=1000, n=None, clip_denoised=False, DDIM=False, var_type='fixed_large', schedule='linear'):
+def p_sample_loop(model, x, s=1000, clip_denoised=False, DDIM=False, var_type='fixed_large', schedule='linear'):
     device = next(model.parameters()).device
     x = x.to(device)
     res = []
@@ -73,7 +74,7 @@ def p_sample_loop(model, x, s=1000, n=None, clip_denoised=False, DDIM=False, var
             next_t = None
         else:
             next_t = seq[i + 1]
-        x = p_sample(model, x, torch.tensor([t], device=device), DDIM, n, var_type, next_t)
+        x = p_sample(model, x, torch.tensor([t], device=device), DDIM, var_type, next_t)
         res.append(x)
     if clip_denoised:
         res = [torch.clip(x, -1, 1) for x in res]
