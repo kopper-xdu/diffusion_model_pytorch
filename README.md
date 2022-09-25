@@ -30,4 +30,4 @@ python eval.py --steps 200 --DDIM
 
 ### 使用probability ODE采样
 
-在此[kopper-xdu/diffusion-sample (github.com)](https://github.com/kopper-xdu/diffusion-sample#diffusion-sample)实现
+在[kopper-xdu/diffusion-sample (github.com)](https://github.com/kopper-xdu/diffusion-sample#diffusion-sample)实现
