@@ -4,6 +4,8 @@
 
 ### Usage
 
+下载[checkpoints](https://drive.google.com/file/d/1ZgIIniTqVkJKFxLNuhon6xrQn3N2R-wI/view?usp=sharing)放入 ./checkpoints目录中
+
 ```bash
 mkdir images 
 ```
