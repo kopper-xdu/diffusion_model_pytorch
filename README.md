@@ -4,7 +4,7 @@ This repository reproduced DDPM model. I trained on cifar10 and get a good resul
 
 ### Usage
 
-1. download [checkpoints](https://drive.google.com/file/d/10ebV4-OCxtd8deJ97R_FSZH8RRTvP_gv/view) to ./checkpoints
+1. download [checkpoints](https://1drv.ms/u/c/aafad8f99d6297cc/EYIhEI1bbJJCo0u948MtfpwBZ4VeyWCi03Yoo2RHZlOAoQ) to ./checkpoints
 
 2. generate images
 ```bash
