@@ -26,8 +26,3 @@ python eval.py --steps 200 --DDIM
 100 steps result (DDIM)
 
 ![image](example/DDIM100.png)
-
-
-### Probability ODE sampler
-
-implemented in [kopper-xdu/diffusion-sample (github.com)](https://github.com/kopper-xdu/diffusion-sample#diffusion-sample)
